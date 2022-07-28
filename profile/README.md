@@ -1,9 +1,10 @@
 # Main definitions
 
-**Variables relative to treatment lines:**
-| endakttherapronr or current_line |    Treatment line     | Variable prefix   |
-| :--------------: | :-------------------: | ----------------- |
-|        0         |     No Treatment|received | ed variables      |
+## Variables relative to treatment lines
+
+| endakttherapronr or current_line | Current treatment line | Variable prefix   |
+| :--------------: | :-----------------------: | ----------------- |
+|        0         |     No Treatment received | ed variables      |
 |        1         |     1st Line Treatment| pt variables      |
 |        2         |     2nd Line Treatment| m1 variables      |
 |        3         |     3rd Line Treatment| m2 variables      |
@@ -16,7 +17,8 @@
 |        10        |     10th Line Treatment| m9 variables      |
 
 
-**Definitions of the TTNTs (one digit after comma):**
+## Time-To-Next-Treatment (duration between the start date of two consecutive treatments)
+
 |      TTNT     |       Start   |        End      | 
 | :-----------: | ------------- |:---------------:|
 |     TTNT1     | pttmstart	    |     m1tmstart     |
@@ -31,9 +33,46 @@
 
 **Note:**
 
-m1start is the earliest date of any treatment (chemotherapy or stem cell transplantation or surgery...). Therefore,
+mXstart is the earliest date of any treatment (chemotherapy or stem cell transplantation or surgery...).
 
-m1start = MIN(m1tmstart, m1smstart, m1hdstart, m1sztdat, m1sztdat2, m1ktstart, m1etstart, m1opdat)
+Ex: TTNT2:
+```python
+m1start_dates = [var for var in data if var.startwith(‘m1’) if ‘ende’ in var]
+m1start = min(data[m1ende_dates])
+
+m2start_dates = [var for var in data if var.startwith(‘m2’) if ‘ende’ in var]
+m2start = min(data[m2start_dates])
+
+TTNT2 = m2start - m1start
+```
+
+## Therapy Duration: Duration between the start and end of treatment
+
+|      Therapy duration or TDX   |       Start   |        End      | 
+| :----------------------------: | ------------- |:---------------:|
+|     1st line treatment or TD1  | pttmstart	    |     ptende     |
+|     2nd line treatment or TD2  | m1tmstart	    |     m1ende     |
+|     3rd line treatment or TD3  | m2tmstart	    |     m2ende     |
+|     4th line treatment or TD4     | m3tmstart	    |     m3ende     |
+|     5th line treatment or TD5     | m4tmstart	    |     m4ende     |
+|     6th line treatment or TD6     | m5tmstart	    |     m5ende     |
+|     7th line treatment or TD7     | m6tmstart	    |     m6ende     |
+|     8th line treatment or TD8     | m7tmstart	    |     m7ende     |
+|     9th line treatment or TD9     | m8tmstart	    |     m8ende     |
+
+mXende is the date of the latest treatment or the censor date or death date
+
+Ex: For second line treatment:
+```python
+if current_line == 2: # The patient is currently in the second line treatment
+	m1ende = censor_date or death_date
+if current_line > 2:
+	m1ende_dates = [var for var in data if var.startwith(‘m1’) if ‘ende’ in var]
+	m1ende = max(data[m1ende_dates])
+
+TD2 = m1ende - m1start
+```
+
 
 **Contact**
 
