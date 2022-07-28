@@ -37,10 +37,10 @@ mXstart is the earliest date of any treatment (chemotherapy or stem cell transpl
 
 Ex: TTNT2:
 ```python
-m1start_dates = [var for var in data if var.startwith(‘m1’) if ‘ende’ in var]
+m1start_dates = [var for var in data if var.startwith(‘m1’) if ‘start’ in var]
 m1start = min(data[m1ende_dates])
 
-m2start_dates = [var for var in data if var.startwith(‘m2’) if ‘ende’ in var]
+m2start_dates = [var for var in data if var.startwith(‘m2’) if ‘start’ in var]
 m2start = min(data[m2start_dates])
 
 TTNT2 = m2start - m1start
