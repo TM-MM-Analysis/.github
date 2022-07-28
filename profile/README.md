@@ -17,7 +17,7 @@
 |        10        |     10th Line Treatment| m9 variables      |
 
 
-## Time-To-Next-Treatment (duration between the start date of two consecutive treatments)
+## Time-To-Next-Treatment (duration between the start dates of two consecutive treatments)
 
 |      TTNT     |       Start   |        End      | 
 | :-----------: | ------------- |:---------------:|
@@ -46,7 +46,7 @@ m2start = min(data[m2start_dates])
 TTNT2 = m2start - m1start
 ```
 
-## Therapy Duration: Duration between the start and end of treatment
+## Therapy Duration: Duration between the start and end of a treatment
 
 |      Therapy duration or TDX   |       Start   |        End      | 
 | :----------------------------: | ------------- |:---------------:|
