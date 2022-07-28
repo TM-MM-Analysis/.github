@@ -31,5 +31,6 @@
 
 **Note:**
 
-m1start (*not used*) = earliest date of any treatment (chemotherapy or stem cell transplantation or surgery...)
+m1start is the earliest date of any treatment (chemotherapy or stem cell transplantation or surgery...). Therefore,
+
 m1start = MIN(m1tmstart, m1smstart, m1hdstart, m1sztdat, m1sztdat2, m1ktstart, m1etstart, m1opdat)
