@@ -4,17 +4,17 @@
 
 | endakttherapronr or current_line | Current treatment line | Variable prefix   |
 | :--------------: | :-----------------------: | ----------------- |
-|        0         |     No Treatment received | ed variables      |
-|        1         |     1st Line Treatment| pt variables      |
-|        2         |     2nd Line Treatment| m1 variables      |
-|        3         |     3rd Line Treatment| m2 variables      |
-|        4         |     4th Line Treatment| m3 variables      |
-|        5         |     5th Line Treatment| m4 variables      |
-|        6         |     6th Line Treatment| m5 variables      |
-|        7         |     7th Line Treatment| m6 variables      |
-|        8         |     8th Line Treatment| m7 variables      |
-|        9         |     9th Line Treatment| m8 variables      |
-|        10        |     10th Line Treatment| m9 variables      |
+|        0         |     1st Line Treatment| pt variables      |
+|        1         |     2nd Line Treatment| m1 variables      |
+|        2         |     3rd Line Treatment| m2 variables      |
+|        3         |     4th Line Treatment| m3 variables      |
+|        4         |     5th Line Treatment| m4 variables      |
+|        5         |     6th Line Treatment| m5 variables      |
+|        6         |     7th Line Treatment| m6 variables      |
+|        7         |     8th Line Treatment| m7 variables      |
+|        8         |     9th Line Treatment| m8 variables      |
+|        9        |     10th Line Treatment| m9 variables      |
+|        10        |     11th Line Treatment| m9 variables      |
 
 
 ## Time-To-Next-Treatment (duration between the start dates of two consecutive treatments)
