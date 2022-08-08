@@ -66,7 +66,7 @@ Ex: For second line treatment:
 ```python
 if current_line == 1: # The patient is currently in the second line treatment
 	m1ende = censor_date or death_date
-if current_line > 2:
+if current_line > 1:
 	m1ende_dates = [var for var in data if var.startwith(‘m1’) if ‘ende’ in var]
 	m1ende = max(data[m1ende_dates])
 
